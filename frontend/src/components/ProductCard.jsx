@@ -14,6 +14,7 @@
  * @prop {number} product.rating - Product rating (0-5)
  * @prop {number} product.reviews - Number of customer reviews
  * @prop {Function} onBuyClick - Callback function when "Buy Now" button is clicked
+ * @prop {boolean} isLoading - Whether payment is being processed
  * 
  * Features:
  * - Displays product image with loading state
@@ -22,8 +23,9 @@
  * - Interactive "Buy Now" button with hover effects
  * - Responsive card layout with smooth animations
  * - Error handling for image loading failures
+ * - Disabled state during payment processing
  */
-function ProductCard({ product, onBuyClick }) {
+function ProductCard({ product, onBuyClick, isLoading = false }) {
   // Handle buy button click
   const handleBuyClick = () => {
     onBuyClick(product)
