@@ -18,14 +18,16 @@ app.use(cors({
 }));
 app.use(helmet());
 app.use(morgan("dev"));
+const passport = require("./config/passport");
+app.use(passport.initialize());
 
 // Routes Placeholder (will be added later)
 const getAuthRoutes = require('./routes/auth.routes');
 const paymentRouter = require('./routes/payment.routes');
 const groupRouter = require('./routes/group.routes');
-// const userRouter = require('./routes/user.routes');
+const userRouter = require('./routes/user.routes');
 
-app.use("/api/v1/users", getAuthRoutes);
+app.use("/api/v1/users", userRouter);
 app.use("/api/v1/payments", paymentRouter);
 app.use("/api/v1/groups", groupRouter);
 

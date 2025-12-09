@@ -8,7 +8,11 @@ const PORT = process.env.PORT || 5000;
 
 connectDB()
     .then(() => {
-        app.listen(PORT, () => {
+        const server = require('http').createServer(app);
+        const { initSocket } = require('./socket');
+        initSocket(server);
+
+        server.listen(PORT, () => {
             console.log(`⚙️  Server is running at port : ${PORT}`);
         });
     })
