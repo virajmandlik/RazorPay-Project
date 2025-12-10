@@ -1,16 +1,43 @@
-# React + Vite
+# 🎨 Splittr Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The React-based user interface for the Splittr application. Built with Vite for speed and Tailwind CSS for styling.
 
-Currently, two official plugins are available:
+## 📱 Tech Stack
+*   **React 19**: Latest React features.
+*   **Vite**: Next-gen frontend tooling.
+*   **Tailwind CSS**: Utility-first CSS framework.
+*   **Recharts**: Composable charting library for Analytics.
+*   **Socket.io-client**: For real-time event listening.
+*   **Axios**: HTTP client with interceptors for auth.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Setup & Run
 
-## React Compiler
+1.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2.  **Environment Variables**
+    Create a `.env` file:
+    ```env
+    VITE_API_URL=http://localhost:5000/api/v1
+    VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
+    ```
 
-## Expanding the ESLint configuration
+3.  **Start Development Server**
+    ```bash
+    npm run dev
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Key Components
+
+*   **`pages/Dashboard.jsx`**: Main hub. Summaries, sidebar, group lists.
+*   **`pages/Analytics.jsx`**: *[New]* Visualizes spending trends and AI predictions.
+*   **`components/PaymentOrchestration.jsx`**: Handles the UI flow for settling debts.
+*   **`context/AuthContext.jsx`**: Manages user session state laterally.
+
+## 📊 Analytics Features
+The frontend fetches data from the backend and renders:
+*   **Bar Charts**: For comparing group spending.
+*   **Trend Lines**: For visualizing history.
+*   **Prediction Cards**: Displaying the backend's linear regression forecast.
