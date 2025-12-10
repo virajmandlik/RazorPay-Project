@@ -59,4 +59,10 @@ export const groupService = {
     addExpense: (groupId, data) => api.post(`/groups/${groupId}/expenses`, data),
 };
 
+// Analytics Services
+export const analyticsService = {
+    getGroupWiseMonthlySpending: () => api.get('/analytics/monthly-group-stats'),
+    getSpendingPrediction: () => api.get('/analytics/prediction'),
+};
+
 export default api;

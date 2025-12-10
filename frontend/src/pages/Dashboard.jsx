@@ -12,7 +12,8 @@ import ProfileModal from "../components/ProfileModal";
 import ExpenseChart from "../components/ExpenseChart";
 import Toast from "../components/Toast"; // Import Toast
 import appIcon from "../assets/app_icon.png";
-import { FiLogOut, FiPlus, FiUsers, FiDollarSign, FiCreditCard, FiActivity, FiBox, FiSun, FiMoon, FiDownload, FiUser } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { FiLogOut, FiPlus, FiUsers, FiDollarSign, FiCreditCard, FiActivity, FiBox, FiSun, FiMoon, FiDownload, FiUser, FiPieChart } from "react-icons/fi";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 
@@ -241,6 +242,10 @@ const Dashboard = () => {
                         <FiActivity className="w-5 h-5" />
                         <span>Dashboard</span>
                     </a>
+                    <Link to="/analytics" className="flex items-center space-x-3 px-4 py-3 text-slate-300 hover:bg-slate-800 hover:text-white rounded-xl transition-colors">
+                        <FiPieChart className="w-5 h-5" />
+                        <span>Analytics</span>
+                    </Link>
                     <button onClick={generateReport} className="w-full flex items-center space-x-3 px-4 py-3 text-slate-300 hover:bg-slate-800 hover:text-white rounded-xl transition-colors text-left">
                         <FiDownload className="w-5 h-5" />
                         <span>Export Data</span>

@@ -31,6 +31,9 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/payments", paymentRouter);
 app.use("/api/v1/groups", groupRouter);
 
+const analyticsRouter = require('./routes/analytics.routes');
+app.use("/api/v1/analytics", analyticsRouter);
+
 // Root route for testing
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to Payment Splitter API" });
